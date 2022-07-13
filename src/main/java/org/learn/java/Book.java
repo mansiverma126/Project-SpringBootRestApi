@@ -1,11 +1,20 @@
 package org.learn.java;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "BOOK")
 public class Book implements Serializable{
 
 	private static final long serialVersionUID = 5756128887126179776L;
+
+	@Id
+	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+
+	@Column(name = "NAME")
 	private String name;
 
 	public Book() {
